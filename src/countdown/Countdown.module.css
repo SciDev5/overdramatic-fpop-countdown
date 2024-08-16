@@ -1,0 +1,40 @@
+.a {
+    /* background-image: url("https://cdn.twokinds.keenspot.com/comics/20240721.png"); */
+    background-image: radial-gradient(circle at 25vw 44vh, #0ff2, #07f1, #00f0 40%),
+        radial-gradient(circle at 89vw 80vh, #40f4, #73f0 30%),
+        radial-gradient(circle at 90vw 20vh, #8022, #f300 20%),
+        linear-gradient(0deg, #000, #003);
+    height: 100vh;
+}
+
+.b {
+    mix-blend-mode: soft-light;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    font-size: 10vh;
+    font-weight: bold;
+    font-stretch: 125%;
+    text-align: center;
+
+    background: #fff;
+    color: #000;
+}
+
+.counter {
+    font-size: 12vh;
+    line-height: 12vh;
+    text-align: center;
+
+    background: #000;
+    color: #fff;
+    padding-block: 5vh;
+}
+
+.spacer {
+    flex: 1 1;
+    min-height: 0;
+}
