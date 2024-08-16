@@ -12,8 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Countdown event_name="FPOP" until={new Date("2024-08-20 12:00:00 EDT")} />
-        {/* <Countdown event_name="FPOP" until={new Date("2024-08-20 12:00:00 EDT")} /> */}
+        <Countdown event_name="FPOP" until={new Date(1724169600000)} />
       </main>
     </>
   );

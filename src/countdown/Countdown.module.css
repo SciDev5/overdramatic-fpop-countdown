@@ -172,8 +172,8 @@
 }
 
 .header {
-    font-size: 10vh;
-    line-height: 15vh;
+    font-size: calc(min(10vh, 10vw));
+    line-height: calc(min(15vh, 30vw));
     font-weight: bold;
     font-stretch: 125%;
     text-align: center;
@@ -183,8 +183,8 @@
 }
 
 .counter {
-    font-size: 12vh;
-    line-height: 12vh;
+    font-size: calc(min(12vh, 18vw));
+    line-height: calc(min(12vh, 18vw));
     text-align: center;
 
     background: #000;
@@ -215,6 +215,10 @@
 .spacer {
     flex: 1 1;
     min-height: 0;
+}
+
+.spacer:nth-last-child(2) {
+    flex-grow: 1.5;
 }
 
 .sound_disabled_indicator {
