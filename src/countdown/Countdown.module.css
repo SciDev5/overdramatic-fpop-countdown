@@ -1,26 +1,184 @@
 .a {
     /* background-image: url("https://cdn.twokinds.keenspot.com/comics/20240721.png"); */
-    background-image: radial-gradient(circle at 25vw 44vh, #0ff2, #07f1, #00f0 40%),
-        radial-gradient(circle at 89vw 80vh, #40f4, #73f0 30%),
-        radial-gradient(circle at 90vw 20vh, #8022, #f300 20%),
-        linear-gradient(0deg, #000, #003);
+    background-image: radial-gradient(circle at var(--p0x) var(--p0y), #0ff2, #07f1, #00f0 70%),
+        radial-gradient(circle at var(--p1x) var(--p1y), #40f4, #73f0 40%),
+        radial-gradient(circle at var(--p2x) var(--p2y), #8022, #f300 60%),
+        linear-gradient(40deg, #100, #070033);
+
+    background-color: #000;
+    animation-name: example;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-duration: 50s;
+
     height: 100vh;
 }
 
+@property --p0x {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p0y {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p1x {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p1y {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p2x {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p2y {
+    syntax: '<length>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@keyframes example {
+    0% {
+        --p0x: 25vw;
+        --p0y: 44vh;
+
+        --p1x: 89vw;
+        --p1y: 80vh;
+
+        --p2x: 90vw;
+        --p2y: 20vh;
+    }
+
+    33.33% {
+        --p0x: 55vw;
+        --p0y: 24vh;
+
+        --p1x: 39vw;
+        --p1y: 90vh;
+
+        --p2x: 80vw;
+        --p2y: 25vh;
+    }
+
+    66.67% {
+        --p0x: 40vw;
+        --p0y: 80vh;
+
+        --p1x: 30vw;
+        --p1y: 20vh;
+
+        --p2x: 70vw;
+        --p2y: 60vh;
+    }
+
+    100% {
+
+        --p0x: 25vw;
+        --p0y: 44vh;
+
+        --p1x: 89vw;
+        --p1y: 80vh;
+
+        --p2x: 90vw;
+        --p2y: 20vh;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background: #777f;
+    }
+
+    100% {
+        background: #0000;
+    }
+}
+
+@keyframes pulse_long {
+    0% {
+        background: #0000;
+    }
+
+    9.9% {
+        background: #0000;
+    }
+
+    10% {
+        background: #777f;
+    }
+
+    19.9% {
+        background: #777f;
+    }
+
+    20% {
+        background: #0000;
+    }
+
+    29.9% {
+        background: #0000;
+    }
+
+    30% {
+        background: #777f;
+    }
+
+    39.9% {
+        background: #777f;
+    }
+
+    40% {
+        background: #0000;
+    }
+
+    49.9% {
+        background: #0000;
+    }
+
+    50% {
+        background: #777f;
+    }
+
+    75% {
+        background: #0000;
+    }
+
+    100% {
+        background: #0000;
+    }
+}
+
 .b {
-    mix-blend-mode: soft-light;
+    mix-blend-mode: color-dodge;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: #777;
+    position: relative;
 }
 
 .header {
     font-size: 10vh;
+    line-height: 15vh;
     font-weight: bold;
     font-stretch: 125%;
     text-align: center;
 
-    background: #fff;
+    background: #ddd;
     color: #000;
 }
 
@@ -30,11 +188,42 @@
     text-align: center;
 
     background: #000;
-    color: #fff;
+    color: #ddd;
     padding-block: 5vh;
+}
+
+.counter>div:not(:last-child) {
+    animation-play-state: paused;
+    background-color: #0000;
+    animation-name: pulse_long;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 2.0s;
+}
+
+.counter>div:last-child {
+    animation-play-state: paused;
+    background-color: #0000;
+    animation-name: pulse;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
 }
 
 .spacer {
     flex: 1 1;
     min-height: 0;
+}
+
+.sound_disabled_indicator {
+    mix-blend-mode: color-dodge;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 2em;
+    padding: 1em;
+    color: #fff;
+    font-weight: bold;
 }
